@@ -1,6 +1,9 @@
 /**
- *  PentahoRepo.js is a class that is designed to make interacting with the Pentaho Repository easier to use.
+ *  pentaho.repo.js is contains classes that is designed to make interacting 
+ *  with the Pentaho Repository easier to use.  Instead of worrying about REST 
+ *  calls you can use JavaScript objects to interact with the repository.
  *  Author:  Bill Back
+ *  Tested against Pentaho 5.3
  *
  *  Copyright 2015 William D. Back
  *  This program is free software: you can redistribute it and/or modify
@@ -21,30 +24,35 @@
  *  or maintained by Pentaho.  
  */
 
-/** URLs for interacting with the repository. */
-var SECURITY_CHECK = "j_spring_security_check";
+var pentaho.repor = (function () {
 
-/** 
- * Creates a new Pentaho File object.
- */
+/**************** URLs for interacting with the repository. *************************/
+
+var URL = {
+  security.check = "j_spring_security_check"
+};
+
+/**************** Pentaho File. *************************/
+
+/** Represents a Pentaho File object. */
 function File () {
-	
+  var 
 }
 
 /** 
  * Creates a new PentahoRepo object.
- * @param pentahoURL The source URL to the Pentaho server, e.g. http://localhost:8080/pentaho.
- * @param authenticator The authentication interface to use to authenticate against Pentaho.
+ *    pentahoURL    The source URL to the Pentaho server, e.g. http://localhost:8080/pentaho.
+ *    authenticator The authentication interface to use to authenticate against Pentaho.
  */
 function PentahoRepo (penatahoURL, authenticator) {
-	console.assert(pentahoURL != null, "No pentahoURL provided.");
+  console.assert(pentahoURL != null, "No pentahoURL provided.");
 
-	this.pentahoURL = pentahoURL;
-	this.username   = username;
-	this.password   = password;
-	
-	this.authenticate();
-	this.refresh();
+  this.pentahoURL = pentahoURL;
+  this.username   = username;
+  this.password   = password;
+  
+  this.authenticate();
+  this.refresh();
 }
 
 /**
@@ -53,7 +61,7 @@ function PentahoRepo (penatahoURL, authenticator) {
  * is being used, then a different authentication method will need to be provided.  
  */
 PentahoRepo.authenticate () {
-	
+  
 }
 
 /**
@@ -62,5 +70,8 @@ PentahoRepo.authenticate () {
  * manually in case soething external may have changed the repository.
  */
 PentahoRepo.refresh() = function {
-	
+  
 }
+
+}()); // end pentaho.repo and init the module.
+

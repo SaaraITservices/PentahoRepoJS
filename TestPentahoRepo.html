@@ -26,27 +26,27 @@
   or maintained by Pentaho.  
 -->
 <html>
-	<head>
-		<title>Test PentahoRepo.js</title>
-	    <script>
-		var runtests = function() {
-			console.log("Testing repository functions");
-			console.log("  Pentaho URL == " + document.getElementById("pentahoURL").toString());
-			console.log("  Logging in as " + document.getElementById("username") +
-			" / " + document.getElementById("password"));
-		}
-		</script>
-	</head>
-	<body>
-		<h1>Test of PentahoRepo.js</h1>
-		<form onsubmit="runtests()" action="javascript:void()">
-			Pentaho URL: <input type="text" name="pentahoURL" id="pentahoURL" value="http://localhost:8080/pentaho" size="50"/>
-			<br/>
-			Username: <input type="text" name="username" id="username" value="admin" />
-			Password: <input type="password" name="password" id="password" value="password">
-			<br/>
-			<input type="submit" value="Run Test"/>
-		</form>
-		 
-	</body>
+  <head>
+    <title>Test PentahoRepo.js</title>
+      <script>
+      var runtests = function() {
+        console.log("Testing repository functions");
+        console.log("  Pentaho URL == " + document.getElementById("pentahoURL").toString());
+        console.log("  Logging in as " + document.getElementById("username")
+          + " / " + document.getElementById("password"));
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Test of PentahoRepo.js</h1>
+    <form onsubmit="runtests()" action="javascript:void()">
+      Pentaho URL: <input type="text" name="pentahoURL" id="pentahoURL" value="http://localhost:8080/pentaho" size="50"/>
+      <br/>
+      Username: <input type="text" name="username" id="username" value="admin" />
+      Password: <input type="password" name="password" id="password" value="password">
+      <br/>
+      <input type="submit" value="Run Test"/>
+    </form>
+     
+  </body>
 </html>
