@@ -1,0 +1,52 @@
+<!--
+  TestPentahoRepo.html is a test driver to verify that PentahoRepo.js actually works as designed.  
+  To use, open the in a browser with Pentaho running.  The test driver assumes you have Pentaho 
+  available on localhost:8080/pentaho.  It also assumes you have the SteelWheels examples installed
+  and admin / password is a valid login.  If any of these assumptions are not correct, then modify 
+    the variables to match your environment.
+  Author:  Bill Back
+ 
+  Copyright 2015 William D. Back
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Lesser General Public License for more details.
+
+  You should have received a copy of the GNU General Public License and
+  GNU Lesser General Public License along with this program.  
+  If not, see <http://www.gnu.org/licenses/>.
+
+  This program is a personal, independent project and in no way supported 
+  or maintained by Pentaho.  
+-->
+<html>
+	<head>
+		<title>Test PentahoRepo.js</title>
+	    <script>
+		var runtests = function() {
+			console.log("Testing repository functions");
+			console.log("  Pentaho URL == " + document.getElementById("pentahoURL").toString());
+			console.log("  Logging in as " + document.getElementById("username") +
+			" / " + document.getElementById("password"));
+		}
+		</script>
+	</head>
+	<body>
+		<h1>Test of PentahoRepo.js</h1>
+		<form onsubmit="runtests()" action="javascript:void()">
+			Pentaho URL: <input type="text" name="pentahoURL" id="pentahoURL" value="http://localhost:8080/pentaho" size="50"/>
+			<br/>
+			Username: <input type="text" name="username" id="username" value="admin" />
+			Password: <input type="password" name="password" id="password" value="password">
+			<br/>
+			<input type="submit" value="Run Test"/>
+		</form>
+		 
+	</body>
+</html>
